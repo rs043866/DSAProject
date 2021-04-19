@@ -10,48 +10,33 @@ import java.util.regex.*;
 
 public class HandsOn2 {
 
-    // Complete the hourglassSum function below.
-    static int hourglassSum(int[][] a) {
-    int maxi = Integer.MIN_VALUE;
-    for(int i=0;i<4;i++){
-        for(int j=0;j<4;j++){
-            int sum = 0;
-             sum +=  a[i][j] + a[i][j+1] + a[i][j+2] + a[i+1][j+1] + a[i+2][j] + a[i+2][j+1] + a[i+2][j+2];
+	// Complete the hourglassSum function below.
+	static int hourglassSum(int[][] a) {
+		int maxi = Integer.MIN_VALUE;
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				int sum = 0;
+				sum += a[i][j] + a[i][j + 1] + a[i][j + 2] + a[i + 1][j + 1] + a[i + 2][j] + a[i + 2][j + 1]
+						+ a[i + 2][j + 2];
 
-            if(sum > maxi){
-                maxi = sum;
-            }
-        }
-    }
-    return maxi;
-    
-    }
+				if (sum > maxi) {
+					maxi = sum;
+				}
+			}
+		}
+		return maxi;
 
-    private static final Scanner scanner = new Scanner(System.in);
+	}
 
-    public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+	private static final Scanner scanner = new Scanner(System.in);
 
-        int[][] arr = new int[6][6];
-
-        for (int i = 0; i < 6; i++) {
-            String[] arrRowItems = scanner.nextLine().split(" ");
-            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-            for (int j = 0; j < 6; j++) {
-                int arrItem = Integer.parseInt(arrRowItems[j]);
-                arr[i][j] = arrItem;
-            }
-        }
-
-        int result = hourglassSum(arr);
-
-        bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
-
-        bufferedWriter.close();
-
-        scanner.close();
-    }
+	public static void main(String[] args) throws IOException {
+		int[][] a = new int[6][6];
+		for (int i = 0; i < 6; i++) {
+			for (int j = 0; j < 6; j++) {
+				a[i][j] = scanner.nextInt();
+			}
+		}
+		int ans = hourglassSum(a);
+	}
 }
-
