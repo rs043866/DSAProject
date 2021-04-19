@@ -1,0 +1,26 @@
+1. Undirected Graph:
+- edges have no orientation
+2. Directed Graph/ Digraph:
+3. Weighted Graphs: (u,v,w)
+4. Special graphs:
+	- Trees
+	- Rooted Tree -> Tree with a designated root node where every
+	edge either points away from or towards the root node.
+				  -> When edges point away from the root the graph is called
+	an arborescence (out-tree) and anti - arborescence (in-tree)
+5. DAG (Directed Acyclic Graph) with no cycles.
+-> structure with dependencies
+-> All out-tree are DAG but not all DAGs are out-tree
+6. Bipartite Graph:
+7. Complete Graph:
+
+
+Representing Graphs:
+1. Adjacency Matrix: 
+
+
+	
+	
+	
+	
+	
